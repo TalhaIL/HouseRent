@@ -57,7 +57,7 @@ class ForgotPasswordScreen extends StatelessWidget {
                     onPressed: () {},
                     child: const Text(
                       'Send an email',
-                      style: TextStyle(fontSize: 17),
+                      style: TextStyle(fontSize: 16),
                     ),
                   ),
                 ],
@@ -71,7 +71,7 @@ class ForgotPasswordScreen extends StatelessWidget {
                     },
                     child: const Text(
                       'Back to login',
-                      style: TextStyle(fontSize: 17),
+                      style: TextStyle(fontSize: 16),
                     ),
                   ),
                 ],
