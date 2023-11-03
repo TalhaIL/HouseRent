@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:house_rent/Controllers/auth_controller.dart';
 import 'package:house_rent/Resources/Assets/image_assets.dart';
-import 'package:house_rent/Resources/Colors/app_colors.dart';
+import 'package:house_rent/Resources/Widgets/custom_button.dart';
+import 'package:house_rent/Resources/Widgets/custom_textfield.dart';
 import 'package:house_rent/Utils/app_layout.dart';
 
 class AuthScreen extends StatelessWidget {
@@ -127,7 +128,7 @@ class AuthScreen extends StatelessWidget {
                           height: 30,
                         ),
                         if (!controller.isLoginPage.value) ...list,
-                        authButton(
+                        CustomButton(
                             onPress: controller.isLoginPage.value
                                 ? controller.login
                                 : controller.signedUp,
@@ -158,7 +159,6 @@ class AuthScreen extends StatelessWidget {
                               ),
                               TextButton(
                                 onPressed: () {
-                                  // Get.to(const ForgotPasswordScreen());
                                   Get.toNamed('/forgotPasswordScreen');
                                 },
                                 child: const Text('Forgot Password'),
@@ -208,23 +208,6 @@ class AuthScreen extends StatelessWidget {
     );
   }
 
-  MaterialButton authButton(
-      {required Function()? onPress, required String text}) {
-    return MaterialButton(
-      height: Applayout.getHeight(40),
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(10),
-      ),
-      color: AppColor.appColor,
-      minWidth: Get.width,
-      onPressed: onPress,
-      child: Text(
-        text,
-        style: const TextStyle(color: Colors.white),
-      ),
-    );
-  }
-
   MaterialButton signInWithSocials(
       {required Color color, required String text}) {
     return MaterialButton(
@@ -237,28 +220,6 @@ class AuthScreen extends StatelessWidget {
       child: Text(
         text,
         style: const TextStyle(color: Colors.white),
-      ),
-    );
-  }
-}
-
-class CustomTextField extends StatelessWidget {
-  final TextEditingController? controller;
-  final String text;
-  const CustomTextField({super.key, required this.text, this.controller});
-
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      height: Applayout.getHeight(50),
-      child: TextField(
-        controller: controller,
-        decoration: InputDecoration(
-          hintText: text,
-          border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(10),
-          ),
-        ),
       ),
     );
   }

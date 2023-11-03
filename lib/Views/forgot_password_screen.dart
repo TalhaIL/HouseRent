@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:house_rent/Resources/Widgets/custom_textfield.dart';
 import 'package:house_rent/Utils/app_layout.dart';
-import 'package:house_rent/Views/auth_screen.dart';
 
 class ForgotPasswordScreen extends StatelessWidget {
   const ForgotPasswordScreen({super.key});
