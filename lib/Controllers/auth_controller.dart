@@ -11,6 +11,7 @@ class AuthController extends GetxController {
   RxBool isLoginPage = true.obs;
 
   login() {
+    Get.toNamed('/homeScreen');
     log('LoggedIN');
   }
 
